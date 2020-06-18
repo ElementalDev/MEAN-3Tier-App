@@ -1,0 +1,18 @@
+version: "3"
+services:
+  frontend_app:
+    build: ./MEANApp
+    ports:
+      - "80:80"
+    depends_on:
+      - "api"
+    external_links:
+      - api
+  api:
+    build: ./MEANServer
+    depends_on:
+      - "backend_db"
+  backend_db:
+    image: "mongo:4.2.3-bionic"
+    volumes:
+      - /home/data:/data/db

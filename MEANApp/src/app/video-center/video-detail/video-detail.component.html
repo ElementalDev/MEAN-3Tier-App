@@ -1,0 +1,14 @@
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" [src]="sanitizeUrl()"></iframe>
+</div>
+<br>
+<div>
+  <h5 class="display-5">{{video.title}}</h5>
+  <p><i>{{video.url}}</i></p>
+  <p>{{video.description}}</p>
+</div>
+<div>
+  <button class="btn btn-primary" (click)="onEdit(video._id)"><i class="fas fa-edit"></i> Edit</button>
+  <button class="btn btn-danger" style="margin-left: 5px;" (click)="onDelete()"><i class="far fa-trash-alt"></i>
+    Delete</button>
+</div>
